@@ -1,0 +1,9 @@
+<h1>Edit Description</h1>
+
+<%= form_for @dose do |f| %>
+  <%= f.label :dose %>
+  <%= f.text_field :description %>
+  <%= f.label :ingredient %>
+  <%= f.text_field :ingredient_id %>
+  <%= f.submit %>
+<% end %>

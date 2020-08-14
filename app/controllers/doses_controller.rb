@@ -10,6 +10,22 @@ class DosesController < ApplicationController
     end
   end
 
+  def edit
+    @dose = Dose.find(params[:id])
+  end
+
+  def update
+    @dose.update(dose_params)
+    redirect_to cocktail_path(@dose.cocktail)
+  end
+
+  def destroy
+    @dose = Dose.find(params[:id])
+    @cocktail = @dose.cocktail
+    @dose.destroy
+    redirect_to cocktail_path(@cocktail)
+  end
+
   private
   
   def dose_params

@@ -1,11 +1,28 @@
-<h1>Cocktails</h1>
+<div id="home-page">
+  <h1>Cocktails</h1>
 
-<% @cocktails.each do |cocktail| %>
-  <ul>
-    <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    <%= link_to 'Edit Cocktail', edit_cocktail_path(cocktail) %>
-    <%= link_to ('<i class="fas fa-trash"></i>').html_safe, cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure you would like to DELETE " + cocktail.name } %>
-  </ul>
-<% end %>
+  <div class="cocktails">
+    <% @cocktails.each do |cocktail| %>
+      <ul>
+        <div class="cocktail-card">
+          <div class="photo">
+            <% if cocktail.photo.attached? %>
+              <%= cl_image_tag cocktail.photo.key,height: 200, width: 300, crop: :fill, radius: 8 %>
+            <% end %>
+          </div>
+          <div class="description">
+            <div class="title">
+              <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+            </div>
+            <div class="symbols">
+              <%= link_to ('<i class="far fa-edit"></i>').html_safe, edit_cocktail_path(cocktail) %>
+              <%= link_to ('<i class="fas fa-trash"></i>').html_safe, cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure you would like to DELETE " + cocktail.name } %>
+            </div>
+          </div>
+        </div>
+      </ul>
+    <% end %>
+  </div>
 
-<%= link_to 'Create Cocktail', new_cocktail_path %>
+  <%= link_to 'Create Cocktail', new_cocktail_path, class:"btn btn-success" %>
+</div>
