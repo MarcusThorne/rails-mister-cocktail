@@ -1,0 +1,42 @@
+#cocktail-card {
+  width: 336px!important;
+  margin: 40px;
+  position: static;
+  padding-bottom: 16px;
+}
+
+#cocktail-card, h2, #title {
+  color: black;
+  margin-top: 16px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+#cocktail-card, #photo {
+  box-shadow: 1px 1px 20px 3px rgba(255, 255, 255, 0.3);
+  text-align: center;
+  margin-top: 16px;
+}
+
+.icons {
+  position: relative;
+  right: -130px;
+  top: -62px;
+  font-size: 24px;
+}
+
+.icon {
+  color: black;
+  &:hover {
+    color: grey;
+  }
+}
+
+#cocktail-cards {
+  display: flex!important;
+}
+
+.ingredients {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 16px 0 16px;
+}
