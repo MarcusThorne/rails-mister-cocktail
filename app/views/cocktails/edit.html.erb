@@ -1,8 +1,15 @@
-<h1>Edit Cocktail</h1>
+<div class="form-page">
+  <header><h1>Edit Cocktail</h1></header>
 
-<%= form_for @cocktail do |f| %>
-  <%= f.label :name %>
-  <%= f.file_field :photo %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+  <div class="container">
+    <div class="form">
+      <%= simple_form_for @cocktail do |f| %>
+        <div class="content">
+          <%= f.file_field :photo %>
+          <%= f.input :name %>
+        </div>
+        <p><%= f.submit %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
